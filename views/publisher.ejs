@@ -1,0 +1,19 @@
+<%- include('partials/header') -%>
+
+<h1 class="text-4xl">Post Editor</h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<textarea id="editor"></textarea>
+<iframe id="content" style="border: 1px solid; width: 100%;"></iframe>
+<script>
+    var simplemde = new SimpleMDE({ 
+        element: document.getElementById("editor")
+    });
+    simplemde.codemirror.on("change", function(){
+        window.frames[0].document.body.innerHTML = marked.parse(simplemde.value());
+    });
+</script>
+
+<%- include('partials/footer') -%>

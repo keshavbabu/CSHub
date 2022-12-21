@@ -19,7 +19,11 @@ app.use(express.json());
 
 const config = {
   authRequired: false,
-  auth0Logout: true
+  auth0Logout: true,
+  baseURL: 'https://keshavbabu-curly-journey-xpp44gwr97vhx7w-3000.preview.app.github.dev',
+  clientID: 'Me8uaFetdt7FLYLDrigY7Z88uR69rxoO',
+  issuerBaseURL: 'https://dev-xgivd6t7.us.auth0.com',
+  secret: 'QEJOkQgCcopLGaZ5GgfQI_eEvgVVyWkprrdjPpGh_EseCZmTpGr4SRSCtf3w9sC8'
 };
 
 const port = process.env.PORT || 3000;

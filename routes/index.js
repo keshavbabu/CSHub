@@ -15,4 +15,14 @@ router.get('/profile', requiresAuth(), function (req, res, next) {
   });
 });
 
+router.get('/publisher', requiresAuth(), function (req, res, next) {
+  if(req.oidc.user.email == "keshavjbabu@gmail.com"){
+    res.render('publisher', {
+      userProfile: JSON.stringify(req.oidc.user, null, 2)
+    });
+  }else{
+    res.redirect("/");
+  }
+});
+
 module.exports = router;
